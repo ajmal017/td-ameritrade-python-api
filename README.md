@@ -1,4 +1,6 @@
-#### Table of Contents
+# Unofficial TD Ameritrade Python API Library
+
+## Table of Contents
 
 - [Overview](#overview)
 - [What's in the API](#whats-in-the-api)
@@ -10,8 +12,6 @@
 - [Documentation & Resources](#documentation-and-resources)
 - [Support These Projects](#support-these-projects)
 - [Authentication Workflow](#authentication-workflow)
-
----
 
 ## Overview
 
@@ -70,9 +70,8 @@ from td.client import TDClient
 
 # Create a new session, credentials path is optional.
 TDSession = TDClient(
-    account_number='ACCOUNT_NUMBER',
-    consumer_id='CONSUMER_ID',
-    redirect_uri='REDIRECT_URI',
+    client_id='<CLIENT_ID>',
+    redirect_uri='<REDIRECT_URI>',
     credentials_path='<PATH_TO_CREDENTIALS_FILE>'
 )
 
@@ -80,7 +79,7 @@ TDSession = TDClient(
 TDSession.login()
 
 # Grab real-time quotes for 'MSFT' (Microsoft)
-msft_quotes = TDSession.get_quotes(instruments='MSFT')
+msft_quotes = TDSession.get_quotes(instruments=['MSFT'])
 
 # Grab real-time quotes for 'AMZN' (Amazon) and 'SQ' (Square)
 multiple_quotes = TDSession.get_quotes(instruments=['AMZN','SQ'])
@@ -100,10 +99,12 @@ For certain requests, in a limited fashion, it will help validate your request w
 
 Requests for saved orders, regular orders, watchlists, and option chains can be a challenging process that has multiple opportunities to make mistakes. This library has built-in objects that will allow you to quickly build your request and then validate certain portions of your request when possible.
 
-## Requirements
+### Library Requirements
+
+The following requirements must be met before being able to use the TD Ameritrade Python API library.
 
 - You must have a TD Ameritrade Account.
-- You must have a TD Ameritrade Developer Account. Please go to following [folder](https://github.com/areed1192/td-ameritrade-python-api/tree/master/samples/resources/td-developer-account) for instructions on how to create a Developer account.
+- You must have a TD Ameritrade Developer Account. Please go to following [folder](https://github.com/areed1192/td-ameritrade-python-api/tree/master/samples/resources) for instructions on how to create a Developer account.
 
 ## Documentation and Resources
 

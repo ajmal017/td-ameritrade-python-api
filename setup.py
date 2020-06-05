@@ -17,7 +17,7 @@ setup(
 
     # I'm in alpha development still, so a compliant version number is a1.
     # read this as MAJOR VERSION 0, MINOR VERSION 1, MAINTENANCE VERSION 0
-    version='0.2.4',
+    version='0.2.6',
 
     # here is a simple description of the library, this will appear when
     # someone searches for the library on https://pypi.org/search
@@ -35,15 +35,18 @@ setup(
 
     # there are some dependencies to use the library, so let's list them out.
     install_requires=[
-        'websockets>=8.0.2',
-        'requests>=2.22.0'
+        'websockets',
+        'requests',
+        'flask',
+        'requests-oauthlib',
+        'pyopenssl'
     ],
 
     # some keywords for my library.
     keywords='finance, td ameritrade, api',
 
     # here are the packages I want "build."
-    packages=find_packages(include=['td']),
+    packages=find_packages(include=['td', 'samples']),
 
     # I also have some package data, like photos and JSON files, so I want to
     # include those too.
